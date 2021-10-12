@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+        /* border: 20px solid black; */
+        
+    }
+
+    .test{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        width: 500px; 
+        height: 600px;
+    }
+    
+    input {
+        display: block;
+        width: 200px;
+    }
+    .btn1{
+        width:100px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <div class="container" >
+        <div class="test">
+            <h1>TIP CALCULATOR</h1>
+            <label for=""><h3>AMOUNT</h3></label>
+            <input type="input" id="ib1"  >
+
+            <label for=""><h3>TIP</h3></label>
+            <input type="input"  id="ib2">
+    
+            <h1>Result</h1>
+            <label for=""><h3>TIP AMOUNT</h3></label>
+            <input type="input" id="ib3">
+
+            <label for=""><h3>TOTAL BILL </h3> </label>
+            <input type="input"  id="ib4">
+
+            <button class="btn1" type="button" id="btn1">Calculate</button>
+        </div>
+    </div>
+    <script>
+       let inputbox1=document.getElementById("ib1");
+       let inputbox2=document.getElementById("ib2");
+       let inputbox3=document.getElementById("ib3");
+       let inputbox4=document.getElementById("ib4");
+       let btn1=document.getElementById("btn1");
+
+        btn1.onclick=handler;
+
+        function handler(){
+
+            let a=parseInt(inputbox1.value);
+            let b=parseInt(inputbox2.value);
+            let c=Math.round(a*(b/100));
+        
+            // let d=inputbox1.value*(inputbox2.value/100);
+            console.log(c);
+            document.getElementById("ib3").value=c;
+            let d=(a+c);
+            console.log(d);
+            document.getElementById("ib4").value=d;
+
+        }
+
+        
+        
+    </script>
+
+
+</body>
+</html>
